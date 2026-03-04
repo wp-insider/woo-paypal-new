@@ -1,32 +1,55 @@
 === Payment Gateway for PayPal Pro & PayPal Checkout for WooCommerce ===
 Contributors: wp.insider, wpecommerce
-Donate link: https://wp-ecommerce.net/paypal-pro-payment-gateway-for-woocommerce
-Tags: paypal, paypal pro, woocommerce, woocommerce paypal, credit card
+Donate link: https://wp-ecommerce.net/woocommerce-paypal-checkout-paypal-pro
+Tags: paypal, paypal pro, woocommerce, paypal checkout, credit card
 Requires at least: 6.0
 Tested up to: 7.0
 Stable tag: 4.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Easily add PayPal Pro payment gateway to the WooCommerce plugin so you can allow customers to checkout using credit cards on-site.
+Easily add PayPal Pro and PayPal Checkout payment gateways to WooCommerce. Accept credit cards on-site or offer the latest PayPal payment buttons.
 
 == Description ==
 
-This extension adds on-site credit card checkout functionality on your WooCommerce site. Your customers will enter the credit card on your checkout page (they never leave the site to do the transaction).
+This plugin adds two PayPal payment gateway options to your WooCommerce store:
 
-It is compatible with WooCommerce High-Performance Order Storage (HPOS) feature. It is also compatible with the new block based checkout page. 
+**PayPal Pro (On-Site Credit Card Checkout)**
 
-The credit card checkout experience offered by this extension is very smooth. The following video shows the credit card checkout experience.
+Accept credit card payments directly on your checkout page. Your customers enter their card details on your site and never leave to complete the transaction. The credit card checkout experience is seamless and smooth.
+
+The following video shows the credit card checkout experience:
 
 https://www.youtube.com/watch?v=PAZRba8Tp74
 
-Configuring this addon is very easy. Simply go to the following WooCommerce settings area to enable the PayPal Pro gateway and enter your PayPal Pro API details:
+**PayPal Checkout (Latest PayPal Payment Buttons)**
 
-WooCommerce Settings -> Checkout -> PayPal-Pro
+Offer the latest PayPal payment buttons on your checkout and cart pages. Your customers can pay using their PayPal account, credit/debit card, Venmo, Pay Later, and other payment methods supported by PayPal. The plugin uses PayPal's Commerce Platform (PPCP) to provide a modern and secure checkout experience.
 
-You can find detailed usage instruction with screenshots on the [WooCommerce PayPal Pro Gateway](https://wp-ecommerce.net/paypal-pro-payment-gateway-for-woocommerce) extension page.
+You can enable one or both payment gateways depending on your needs.
 
-After that, your customers will be able to select the credit card checkout option on the WooCommerce checkout page.
+**Features**
+
+* Two payment gateways in one plugin: PayPal Pro and PayPal Checkout.
+* On-site credit card checkout via PayPal Pro.
+* Latest PayPal payment buttons via PayPal Checkout (PayPal, Credit/Debit Card, Venmo, Pay Later).
+* Easy one-click account connection for PayPal Checkout using the automated onboarding flow.
+* PayPal buttons on both the checkout page and the cart page.
+* Compatible with the WooCommerce block-based checkout page.
+* Compatible with the legacy shortcode-based checkout page.
+* Compatible with WooCommerce High-Performance Order Storage (HPOS).
+* Full sandbox (test) mode support for both gateways.
+
+**Configuration**
+
+To configure the gateways, go to:
+
+WooCommerce Settings -> Payments
+
+You will see both "PayPal Pro" and "PayPal Checkout" listed as available payment methods. Click on each one to configure it.
+
+* For PayPal Pro setup instructions, see the [PayPal Pro documentation](https://wp-ecommerce.net/paypal-pro-payment-gateway-for-woocommerce) page.
+* For PayPal Checkout setup instructions, see the [PayPal Checkout documentation](https://wp-ecommerce.net/woocommerce-paypal-checkout-paypal-pro) page.
 
 Post a question on the forum if you have any issue using the addon.
 
@@ -39,22 +62,39 @@ Do the following to install the addon:
 
 == Frequently Asked Questions ==
 
-1. Will my customers be able to checkout using their credit cards after I install this plugin? 
-Yes
+= What payment options does this plugin offer? =
+This plugin offers two payment gateways: (1) PayPal Pro for on-site credit card checkout, and (2) PayPal Checkout for the latest PayPal payment buttons (PayPal, Credit/Debit Card, Venmo, Pay Later, etc.).
 
-2. Will it offer on-site checkout so my customers doesn't have to leave the site? 
-Yes
+= Can I use both PayPal Pro and PayPal Checkout at the same time? =
+Yes. Both payment methods are registered as separate gateways in WooCommerce. You can enable one or both depending on your needs.
 
-3. Does it work with the legacy shortcode checkout page of WooCommerce?
-Yes
+= Will my customers be able to checkout using their credit cards after I install this plugin? =
+Yes. With PayPal Pro enabled, customers can enter their credit card details directly on your checkout page. With PayPal Checkout, customers also have the option to pay with a credit/debit card through PayPal.
 
-4. Does it work with the new block based checkout page of WooCommerce?
-Yes
+= Will PayPal Pro offer on-site checkout so my customers don't have to leave the site? =
+Yes. PayPal Pro processes the credit card payment on your site. The customer never leaves your checkout page.
+
+= Do I need a PayPal Business account? =
+Yes. A PayPal Business account is required to accept payments via either gateway.
+
+= Does it work with the legacy shortcode checkout page of WooCommerce? =
+Yes. Both gateways work with the legacy shortcode-based checkout page.
+
+= Does it work with the new block based checkout page of WooCommerce? =
+Yes. Both gateways are compatible with the new WooCommerce block-based checkout page.
+
+= Is it compatible with WooCommerce HPOS? =
+Yes. This plugin is fully compatible with WooCommerce High-Performance Order Storage (HPOS).
+
+= How do I configure the PayPal Checkout gateway? =
+Go to WooCommerce > Settings > Payments > PayPal Checkout. Enable the gateway, then use the API Connection tab to connect your PayPal account with one click. See the [PayPal Checkout documentation](https://wp-ecommerce.net/woocommerce-paypal-checkout-paypal-pro) for detailed instructions.
 
 == Screenshots ==
 
-Please visit the PayPal Pro Payment Gateway for WooCommerce plugin page to view screenshots:
-https://wp-ecommerce.net/paypal-pro-payment-gateway-for-woocommerce
+Please visit the following documentation pages to view screenshots:
+
+* [PayPal Pro setup and configuration](https://wp-ecommerce.net/paypal-pro-payment-gateway-for-woocommerce)
+* [PayPal Checkout setup and configuration](https://wp-ecommerce.net/woocommerce-paypal-checkout-paypal-pro)
 
 == Changelog ==
 
