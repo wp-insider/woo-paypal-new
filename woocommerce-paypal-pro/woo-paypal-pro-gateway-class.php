@@ -65,6 +65,13 @@ class WC_PP_PRO_Gateway extends WC_Payment_Gateway {
 		<h3><?php _e('PayPal Pro', 'woocommerce-paypal-pro-payment-gateway'); ?></h3>
 		<p><?php _e('Allows Credit Card Payments via the PayPal Pro gateway.', 'woocommerce-paypal-pro-payment-gateway'); ?></p>
 
+		<?php 
+        $pp_pro_doc_link = 'https://wp-ecommerce.net/paypal-pro-payment-gateway-for-woocommerce';
+        $doc_link_html = '<a href="'.esc_url($pp_pro_doc_link).'" target="_blank">'.__( 'PayPal-Pro documentation', 'woocommerce-paypal-pro-payment-gateway').'</a>';
+        echo '<p>';
+        echo sprintf(__( 'Please refer to the %s for setup instructions.', 'woocommerce-paypal-pro-payment-gateway'), $doc_link_html);
+        echo '</p>';		
+		?>
 		<table class="form-table">
 			<?php
 			//Render the settings form according to what is specified in the init_form_fields() function
