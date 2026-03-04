@@ -373,6 +373,12 @@ class WC_Gateway_PayPal_Checkout extends WC_Payment_Gateway {
 
 		echo wp_kses_post( wpautop( $this->get_method_description() ) );
 
+        $doc_link = 'https://wp-ecommerce.net/woocommerce-paypal-checkout-paypal-pro';
+        $doc_link_html = '<a href="'.esc_url($doc_link).'" target="_blank">'.__( 'PayPal Checkout documentation', 'woocommerce-paypal-pro-payment-gateway').'</a>';
+        echo '<p>';
+        echo sprintf(__( 'Please refer to the %s for setup instructions.', 'woocommerce-paypal-pro-payment-gateway'), $doc_link_html);
+        echo '</p>';
+
         $current_tab = isset($_GET['subtab']) && !empty($_GET['subtab']) ? sanitize_text_field($_GET['subtab']) : 'general';
 
         $subtabs = array(
