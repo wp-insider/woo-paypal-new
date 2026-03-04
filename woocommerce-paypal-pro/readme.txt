@@ -57,6 +57,8 @@ Please visit the PayPal Pro Payment Gateway for WooCommerce plugin page to view 
 https://wp-ecommerce.net/paypal-pro-payment-gateway-for-woocommerce
 
 == Changelog ==
+= WIP =
+* Plugin documentation link for PayPal Checkout added in payment settings page.
 
 = 4.0.0 =
 - PayPal Commerce Platform (PPCP) payment option added.
