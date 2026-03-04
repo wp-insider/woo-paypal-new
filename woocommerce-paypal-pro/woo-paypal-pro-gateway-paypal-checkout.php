@@ -23,7 +23,7 @@ class WC_Gateway_PayPal_Checkout extends WC_Payment_Gateway {
         $this->icon               = apply_filters('woocommerce_paypal_checkout_icon', WC_PP_PRO_ADDON_URL . '/assets/img/pp-ppcp.svg');
         $this->has_fields         = true;
         $this->method_title       = __('PayPal Checkout', 'woocommerce-paypal-pro-payment-gateway');
-        $this->method_description = __('Accept payments via PayPal Checkout with smart payment buttons.', 'woocommerce-paypal-pro-payment-gateway');
+        $this->method_description = __('Accept payments through secure PayPal Checkout with the latest PayPal payment buttons.', 'woocommerce-paypal-pro-payment-gateway');
         $this->supports           = array('products');
 
         // Load the settings

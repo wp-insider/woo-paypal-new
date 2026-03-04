@@ -3,8 +3,8 @@ Contributors: wp.insider, wpecommerce
 Donate link: https://wp-ecommerce.net/paypal-pro-payment-gateway-for-woocommerce
 Tags: paypal, paypal pro, woocommerce, woocommerce paypal, credit card
 Requires at least: 6.0
-Tested up to: 6.8
-Stable tag: 3.0.3
+Tested up to: 7.0
+Stable tag: 4.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,7 +26,7 @@ WooCommerce Settings -> Checkout -> PayPal-Pro
 
 You can find detailed usage instruction with screenshots on the [WooCommerce PayPal Pro Gateway](https://wp-ecommerce.net/paypal-pro-payment-gateway-for-woocommerce) extension page.
 
-After that, your customers will be able to select the credit card checkout option on the WooCommere checkout page.
+After that, your customers will be able to select the credit card checkout option on the WooCommerce checkout page.
 
 Post a question on the forum if you have any issue using the addon.
 
@@ -58,11 +58,11 @@ https://wp-ecommerce.net/paypal-pro-payment-gateway-for-woocommerce
 
 == Changelog ==
 
-= WIP =
-- PayPal Commerce Platform payment option added.
+= 4.0.0 =
+- PayPal Commerce Platform (PPCP) payment option added.
 - Fixed an issue with the PayPal API error response handling where the error response was not being properly handled and displayed to the user.
-- PayPal PPCP onboarding feature added.
-- PayPal PPCP checkout code updated.
+- PayPal checkout onboarding feature added.
+- PayPal checkout code updated.
 - Payment Method icons updated.
 
 = 3.0.3 =
