@@ -98,6 +98,9 @@ Please visit the following documentation pages to view screenshots:
 
 == Changelog ==
 
+= WIP =
+- Description updated to include PayPal checkout features and details.
+
 = 4.0.0 =
 - PayPal Commerce Platform (PPCP) payment option added. [PayPal Checkout setup and configuration documentation](https://wp-ecommerce.net/woocommerce-paypal-checkout-paypal-pro)
 - Fixed an issue with the PayPal API error response handling where the error response was not being properly handled and displayed to the user.
