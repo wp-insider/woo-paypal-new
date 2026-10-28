@@ -1,4 +1,4 @@
-=== Payment Gateway for PayPal Pro & PayPal Checkout for WooCommerce ===
+=== Payment Gateway for PayPal Pro, PayPal Checkout & Subscriptions for WooCommerce ===
 Contributors: wp.insider, wpecommerce
 Donate link: https://wp-ecommerce.net/woocommerce-paypal-checkout-paypal-pro
 Tags: paypal, paypal pro, woocommerce, paypal checkout, credit card
