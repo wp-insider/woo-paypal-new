@@ -8,6 +8,7 @@
  * Author: wp.insider
  * Author URI: https://wp-ecommerce.net/
  * Requires at least: 6.5
+ * Requires PHP: 7.4
  * License: GPL2 or Later
  * WC requires at least: 8.0
  * WC tested up to: 11.2.1
