@@ -1,131 +1,1506 @@
+# Copyright (C) 2026 wp.insider
+# This file is distributed under the GPL2 or Later.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce PayPal Pro\n"
-"POT-Creation-Date: 2019-03-15 15:17+0600\n"
-"PO-Revision-Date: 2019-03-15 15:17+0600\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"Project-Id-Version: Payment Gateway for PayPal Pro, PayPal Checkout & Subscriptions for WooCommerce 4.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce-paypal-pro\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
-"X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: .\n"
+"POT-Creation-Date: 2026-10-28T07:30:27+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: woocommerce-paypal-pro-payment-gateway\n"
 
-#: woo-paypal-pro-gateway-class.php:37 woo-paypal-pro-gateway-class.php:80
-msgid "Credit Card Payment"
+#. Plugin Name of the plugin
+#: woo-paypal-pro.php
+msgid "Payment Gateway for PayPal Pro, PayPal Checkout & Subscriptions for WooCommerce"
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:50
-msgid "PayPal Pro"
+#. Plugin URI of the plugin
+#: woo-paypal-pro.php
+msgid "https://wp-ecommerce.net/paypal-pro-payment-gateway-for-woocommerce"
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:51
-msgid "Allows Credit Card Payments via the PayPal Pro gateway."
+#. Description of the plugin
+#: woo-paypal-pro.php
+msgid "Easily adds PayPal Checkout and PayPal Pro payment gateways to the WooCommerce plugin so you can allow customers to checkout via credit card or PayPal, and sell recurring PayPal subscriptions."
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:65
-msgid "Enable/Disable"
+#. Author of the plugin
+#: woo-paypal-pro.php
+msgid "wp.insider"
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:67
-msgid "Enable PayPal Pro Gateway"
+#. Author URI of the plugin
+#: woo-paypal-pro.php
+msgid "https://wp-ecommerce.net/"
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:71
-msgid "Sandbox Mode"
+#: lib/paypal/class-tthq-paypal-acdc-related.php:38
+msgid "Note: Merchant ID value is empty so the SDK URL will not include this parameter."
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:73
-msgid "Enable Sandbox Mode"
+#: lib/paypal/class-tthq-paypal-acdc-related.php:139
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:438
+#: lib/paypal/class-tthq-paypal-onapprove-ipn-handler.php:38
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding-serverside.php:40
+msgid "Empty data received."
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:77
-msgid "Title"
+#: lib/paypal/class-tthq-paypal-acdc-related.php:158
+#: lib/paypal/class-tthq-paypal-acdc-related.php:235
+#: lib/paypal/class-tthq-paypal-onapprove-ipn-handler.php:52
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding-serverside.php:55
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding-serverside.php:449
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding-serverside.php:470
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding-serverside.php:491
+msgid "Nonce check failed. The page was most likely cached. Please reload the page and try again."
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:79
-msgid "The title for this checkout option."
+#: lib/paypal/class-tthq-paypal-acdc-related.php:198
+msgid "Failed to create the order. Enable the debug logging feature to get more details."
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:83
-msgid "Show CVV Hint"
+#: lib/paypal/class-tthq-paypal-acdc-related.php:221
+msgid "Empty order ID received."
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:85
-msgid ""
-"Enable this option if you want to show a hint for the CVV field on the "
-"credit card checkout form"
+#: lib/paypal/class-tthq-paypal-acdc-related.php:251
+msgid "Failed to capture the order. Enable the debug logging feature to get more details."
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:89
-msgid "PayPal Pro API Username"
+#: lib/paypal/class-tthq-paypal-button-ajax-handler.php:54
+msgid "Your cart is empty. Please refresh checkout."
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:91
-msgid "Your PayPal payments pro API username."
+#: lib/paypal/class-tthq-paypal-button-ajax-handler.php:57
+msgid "This cart cannot use a one-time PayPal payment."
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:95
-msgid "PayPal Pro API Password"
+#: lib/paypal/class-tthq-paypal-button-ajax-handler.php:74
+#: lib/paypal/class-tthq-paypal-button-ajax-handler.php:219
+msgid "This order cannot use a one-time PayPal payment."
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:97
-msgid "Your PayPal payments pro API password."
-msgstr ""
-
-#: woo-paypal-pro-gateway-class.php:101
-msgid "PayPal Pro API Signature"
-msgstr ""
-
-#: woo-paypal-pro-gateway-class.php:103
-msgid "Your PayPal payments pro API signature."
-msgstr ""
-
-#: woo-paypal-pro-gateway-class.php:111
+#. translators: %s: WooCommerce order number.
+#: lib/paypal/class-tthq-paypal-button-ajax-handler.php:94
 #, php-format
-msgid ""
-"%s gateway requires SSL certificate for better security. The <a href=\"%s"
-"\">force SSL option</a> is disabled on your site. Please ensure your server "
-"has a valid SSL certificate so you can enable the SSL option on your "
-"checkout page."
+msgid "Order %s"
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:123
-msgid "Credit card number you entered is invalid."
+#: lib/paypal/class-tthq-paypal-button-ajax-handler.php:148
+msgid "Failed to create PayPal order. Please try again."
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:126
-msgid "Card type is not valid."
+#: lib/paypal/class-tthq-paypal-button-ajax-handler.php:186
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:414
+msgid "PayPal Checkout payment pending."
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:129
-msgid "Card expiration date is not valid."
+#: lib/paypal/class-tthq-paypal-button-ajax-handler.php:226
+msgid "Subscriptions cannot use a one-time PayPal payment."
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:132
-msgid ""
-"Card verification number (CVV) is not valid. You can find this number on "
-"your credit card."
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:84
+msgid "No subscription product was found in your cart. Please refresh the page and try again."
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:150 woo-paypal-pro-gateway-class.php:153
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:98
+msgid "Unable to calculate subscription totals. Please refresh checkout and try again."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:142
+msgid "Your PayPal approval has changed. Please refresh checkout and try again."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:168
+msgid "Unable to connect to PayPal. Please try again."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:200
+msgid "PayPal could not create the subscription."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:288
+msgid "Please enter a complete shipping address before subscribing."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:294
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:298
+msgid "No shipping options are available for this address. Please verify the address is correct or try a different address."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:301
+msgid "Please select an available shipping method before subscribing."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:313
+msgid "Please enter the shipping recipient’s name in checkout before subscribing."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:334
+msgid "Please check out with one subscription and a quantity of one, without other products."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:337
+msgid "This subscription is not available for checkout."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:379
+msgid "Please enter your billing name and a valid email address before subscribing."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:449
+#: lib/paypal/class-tthq-paypal-onapprove-ipn-handler.php:64
+msgid "Empty transaction data received."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:548
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:549
+#: lib/paypal/class-tthq-paypal-onapprove-ipn-handler.php:144
+#: lib/paypal/class-tthq-paypal-onapprove-ipn-handler.php:145
+msgid "subscription created"
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:647
+msgid "The subscription does not belong to this checkout session."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:667
+msgid "PayPal has not confirmed subscription approval. Please try again."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:671
+msgid "The PayPal subscription plan does not match this order."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-button-sub-ajax-handler.php:686
+msgid "PayPal reports a trial that is not configured for this order."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-checkout-attempt.php:84
+msgid "Your subscription is being processed. Please try again shortly."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-checkout-attempt.php:109
+msgid "Your previous PayPal attempt has changed. Please refresh checkout and try again."
+msgstr ""
+
+#. translators: %s: Replacement order ID.
+#: lib/paypal/class-tthq-paypal-checkout-attempt.php:158
+#, php-format
+msgid "Pending PayPal approval moved to replacement order #%s. This order remains closed."
+msgstr ""
+
+#. translators: %s: Original order ID.
+#: lib/paypal/class-tthq-paypal-checkout-attempt.php:160
+#, php-format
+msgid "Resuming the existing PayPal approval from order #%s. No new PayPal subscription was created."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-checkout-attempt.php:165
+msgid "Unable to prepare a new order for your existing PayPal approval. Please try again shortly or contact the store."
+msgstr ""
+
+#. translators: %s: Replacement order ID.
+#: lib/paypal/class-tthq-paypal-checkout-attempt.php:282
+#, php-format
+msgid "PayPal approval arrived after this order closed. Recovered into order #%s using the same PayPal subscription."
+msgstr ""
+
+#. translators: %s: Original order ID.
+#: lib/paypal/class-tthq-paypal-checkout-attempt.php:284
+#, php-format
+msgid "Recovered late PayPal approval from order #%s. Payment is recorded separately from verified payment notifications."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-checkout-attempt.php:290
+msgid "Unable to reconcile the approved PayPal subscription. Please contact the store."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-checkout-attempt.php:332
+msgid "Your replacement order could not be verified. Please contact the store before trying another payment."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-checkout-attempt.php:357
+msgid "Unable to check your previous PayPal attempt. Please try again shortly."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-checkout-attempt.php:364
+msgid "Preparing a new order for your existing PayPal approval."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-checkout-attempt.php:371
+msgid "Your previous order can no longer resume PayPal approval. Please check your orders or contact the store before trying another payment."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-checkout-attempt.php:378
+msgid "Your previous PayPal subscription has approval or payment activity. Please check your orders or contact the store before trying another payment."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-checkout-attempt.php:383
+msgid "Your previous PayPal attempt is no longer awaiting approval. Please refresh checkout and check your orders before trying another payment."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-checkout-guard.php:94
+msgid "Please select an allowed billing and shipping country."
+msgstr ""
+
+#. translators: %s: Checkout field label.
+#: lib/paypal/class-tthq-paypal-checkout-guard.php:100
+#, php-format
+msgid "%s is required before paying."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-checkout-guard.php:109
+msgid "Please enter valid checkout contact and address details."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-checkout-guard.php:115
+msgid "Please select a valid state for your country."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-checkout-guard.php:129
+msgid "No shipping options are available for this address."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-checkout-guard.php:133
+msgid "Please select an available shipping method for your address."
+msgstr ""
+
+#. translators: %s: PayPal order ID.
+#: lib/paypal/class-tthq-paypal-utils-ipn-related.php:193
+#, php-format
+msgid "PayPal payment completed. PayPal Order ID: %s"
+msgstr ""
+
+#. translators: %s: PayPal subscription ID.
+#: lib/paypal/class-tthq-paypal-utils-ipn-related.php:233
+#, php-format
+msgid "PayPal subscription completed. PayPal Subscription ID: %s"
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-utils.php:158
+msgid "Unable to prepare the subscription plan. Please try again."
+msgstr ""
+
+#. translators: %s: current PayPal subscription status.
+#: lib/paypal/class-tthq-paypal-webhook-event-handler.php:201
+#, php-format
+msgid "PayPal subscription status: %s."
+msgstr ""
+
+#. translators: %s: PayPal transaction ID.
+#: lib/paypal/class-tthq-paypal-webhook-event-handler.php:303
+#, php-format
+msgid "PayPal initial subscription payment received. Transaction ID: %s"
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-webhook-event-handler.php:318
+#: woo-paypal-pro-gateway-paypal-checkout.php:31
+msgid "PayPal Checkout"
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-webhook-event-handler.php:325
+msgid "PayPal subscription payment - allocation pending review"
+msgstr ""
+
+#. translators: 1: transaction ID, 2: received amount, 3: received currency, 4: expected amount, 5: expected currency.
+#: lib/paypal/class-tthq-paypal-webhook-event-handler.php:354
+#, php-format
+msgid "PayPal payment received. Transaction ID: %1$s. Received %2$s %3$s; expected recurring total %4$s %5$s. Review required: this may include an outstanding balance or a price change. The payment is recorded on hold; reconcile product and tax allocations before completing this order. Do not charge the customer again."
+msgstr ""
+
+#. translators: %s: PayPal transaction ID.
+#: lib/paypal/class-tthq-paypal-webhook-event-handler.php:360
+#, php-format
+msgid "PayPal subscription renewal payment completed. Transaction ID: %s"
+msgstr ""
+
+#. translators: 1: PayPal transaction ID, 2: unchanged order status.
+#: lib/paypal/class-tthq-paypal-webhook-event-handler.php:421
+#, php-format
+msgid "Verified PayPal payment notification received for transaction %1$s. Order status \"%2$s\" was preserved; automatic payment completion was skipped to respect an existing hold, closed status, refund or paid record. Review this receipt against the order before taking further action. Do not charge the customer again."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-webhook-event-handler.php:515
+msgid "N/A."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-webhook.php:312
+msgid "No webhook found. Use the following Create Webhook button to create a new webhook automatically in your PayPal account."
+msgstr ""
+
+#. translators: %s: PayPal environment (sandbox or live).
+#: lib/paypal/class-tthq-paypal-webhook.php:317
+#, php-format
+msgid "PayPal API Credential information is missing in settings. Please enter valid PayPal API Credentials in the General Settings tab for %s mode."
+msgstr ""
+
+#. translators: %s: PayPal environment (sandbox or live).
+#: lib/paypal/class-tthq-paypal-webhook.php:320
+#, php-format
+msgid "Invalid or Missing API Credentials! Check the plugin settings and enter valid API credentials in the PayPal Credentials section for %s mode."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-webhook.php:330
+msgid "Webhook exists. If you still have issues with webhooks, you can delete it and create again."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-webhook.php:357
+msgid "Invalid webhook URL."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-webhook.php:357
+msgid "Note that the PayPal subscription API requires your site to use HTTPS URLs. You must use an SSL certificate with HTTPS URLs to complete the setup of the subscription addon and use it."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-webhook.php:366
+msgid "Webhook has been created."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-webhook.php:390
+msgid "Webhook has been deleted."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-webhook.php:403
+msgid "No webhook found. Nothing to delete."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-webhook.php:420
+msgid "Live mode credentials are not set. Cannot create webhook."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-webhook.php:435
+msgid "Sandbox mode credentials are not set. Cannot create webhook."
+msgstr ""
+
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding-serverside.php:71
+msgid "Failed to generate access token. check debug log file for any error message."
+msgstr ""
+
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding-serverside.php:85
+msgid "Failed to get seller API credentials. check debug log file for any error message."
+msgstr ""
+
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding-serverside.php:106
+msgid "Failed to get seller account status. check debug log file for any error message."
+msgstr ""
+
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding-serverside.php:122
+msgid "Your PayPal account is limited so you cannot accept payment. Contact PaPal support or check your PayPal account inbox for an email from PayPal for the next steps to remove the account limit."
+msgstr ""
+
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding-serverside.php:131
+msgid "Your PayPal account email is not confirmed. Check your PayPal account inbox for an email from PayPal to confirm your PayPal email address."
+msgstr ""
+
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding-serverside.php:460
+msgid "PayPal API access token cache deleted successfully."
+msgstr ""
+
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding-serverside.php:481
+msgid "PayPal account disconnected."
+msgstr ""
+
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding-serverside.php:502
+msgid "PayPal sandbox account disconnected."
+msgstr ""
+
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding.php:141
+#: woo-paypal-pro-gateway-paypal-checkout.php:144
+msgid "Get PayPal Sandbox Credentials"
+msgstr ""
+
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding.php:157
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding.php:268
+#: woo-paypal-pro-gateway-paypal-checkout.php:140
+msgid "Disconnect Sandbox Account"
+msgstr ""
+
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding.php:252
+#: woo-paypal-pro-gateway-paypal-checkout.php:125
+msgid "Get PayPal Live Credentials"
+msgstr ""
+
+#: lib/paypal/onboarding-related/class-tthq-paypal-onboarding.php:321
+msgid "Delete Token Cache"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:92
+msgid "Send subscription information to customer"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:104
+msgid "Subscription information was not sent: the customer billing email is missing or invalid."
+msgstr ""
+
+#. translators: 1: Store name, 2: Subscription order number.
+#: subscription/class-wcppprog-sub-order-handler.php:117
+#, php-format
+msgid "[%1$s] Subscription #%2$s information"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:118
+msgid "Your subscription information"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:120
+#: subscription/class-wcppprog-sub-order-handler.php:127
+msgid "Subscription information could not be sent. Please check your email configuration and try again."
+msgstr ""
+
+#. translators: %s: Customer email address.
+#: subscription/class-wcppprog-sub-order-handler.php:124
+#, php-format
+msgid "Subscription information email sent to %s."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:140
+#: templates/emails/wcpprog-subscription-information.php:34
+#: templates/myaccount/wcpprog-subscriptions.php:26
+msgid "Subscription ID"
+msgstr ""
+
+#. translators: %s: Link to the PayPal subscriptions documentation.
+#: subscription/class-wcppprog-sub-order-handler.php:164
+#, php-format
+msgid "These subscriptions are billed through PayPal Checkout. To refund a payment, issue the refund in your PayPal account. See the %s for managing, cancelling and refunding subscriptions."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:189
+#: subscription/class-wcppprog-sub-order-handler.php:202
+#: subscription/class-wcppprog-sub-order-handler.php:566
+#: subscription/class-wcppprog-sub-order-handler.php:579
+msgid "Subscriptions"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:190
+#: subscription/class-wcppprog-sub-order-handler.php:645
+#: subscription/class-wcppprog-sub-related.php:690
+msgid "Subscription"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:191
+msgid "Add Subscription"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:192
+msgid "Add New Subscription"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:193
+msgid "Edit"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:194
+msgid "Edit Subscription"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:195
+msgid "New Subscription"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:196
+#: subscription/class-wcppprog-sub-order-handler.php:197
+msgid "View Subscription"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:198
+msgid "Search Subscriptions"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:200
+msgid "No Subscriptions found in trash"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:201
+msgid "Parent Subscriptions"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:204
+msgid "This is where subscriptions are stored."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:240
+msgid "Subscription ID:"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:241
+#: templates/emails/wcpprog-subscription-information.php:88
+#: templates/emails/wcpprog-subscription-information.php:104
+msgid "N/A"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:249
+msgid "Next payment date:"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:279
+#: templates/emails/wcpprog-subscription-information.php:116
+msgid "Received Payments"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:294
+msgid "No received payments have been recorded yet."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:299
+#: templates/myaccount/wcpprog-subscriptions.php:23
+msgid "Order"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:300
+msgid "Payment Type"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:301
+#: templates/myaccount/wcpprog-subscriptions.php:24
+msgid "Date"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:302
+#: templates/myaccount/wcpprog-subscriptions.php:25
+msgid "Status"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:303
+#: templates/emails/wcpprog-subscription-information.php:33
+msgid "Payment Method"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:304
+msgid "Transaction ID"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:305
+msgid "Amount"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:306
+msgid "Refunds"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:328
+msgid "Initial Payment"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:328
+msgid "Recurring Payment"
+msgstr ""
+
+#. translators: 1: Formatted refund amount, 2: Refund date, 3: Refund ID.
+#: subscription/class-wcppprog-sub-order-handler.php:336
+#, php-format
+msgid "Amount of %1$s refunded on %2$s. Refund id: %3$s"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:356
+#: subscription/class-wcppprog-sub-order-handler.php:676
+msgid "Manage subscription"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:366
+msgid "Cancel this subscription in PayPal to stop future payments."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:367
+msgid "Cancel subscription"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:374
+msgid "Cancel this subscription in PayPal? Future payments will stop."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:376
+msgid "Cancelling subscription…"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:393
+#: subscription/class-wcppprog-sub-order-handler.php:458
+msgid "Cancellation could not be confirmed. Please reload and try again."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:404
+msgid "Please log in to manage your subscription."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:407
+#: subscription/class-wcppprog-sub-order-handler.php:412
+msgid "Invalid cancellation request."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:418
+msgid "You cannot edit this subscription."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:421
+msgid "This subscription cannot be cancelled. Please reload the page."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:440
+msgid "Subscription is suspended in PayPal. Cancellation was not confirmed."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:444
+msgid "PayPal could not cancel the subscription. Please try again or contact the store for help."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:451
+msgid "Subscription has expired in PayPal. Local status synchronized."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:452
+msgid "Subscription cancelled in PayPal."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:464
+#: subscription/class-wcppprog-sub-order-handler.php:522
+msgctxt "Subscription status"
+msgid "Trialing"
+msgstr ""
+
+#. translators: %s: Number of subscriptions with this status.
+#: subscription/class-wcppprog-sub-order-handler.php:470
+#, php-format
+msgid "Trial <span class=\"count\">(%s)</span>"
+msgid_plural "Trial <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:473
+#: subscription/class-wcppprog-sub-order-handler.php:523
+msgctxt "Subscription status"
+msgid "Active"
+msgstr ""
+
+#. translators: %s: Number of subscriptions with this status.
+#: subscription/class-wcppprog-sub-order-handler.php:479
+#, php-format
+msgid "Active <span class=\"count\">(%s)</span>"
+msgid_plural "Active <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:483
+#: subscription/class-wcppprog-sub-order-handler.php:524
+msgctxt "Subscription status"
+msgid "On hold"
+msgstr ""
+
+#. translators: %s: Number of subscriptions with this status.
+#: subscription/class-wcppprog-sub-order-handler.php:488
+#, php-format
+msgid "On hold <span class=\"count\">(%s)</span>"
+msgid_plural "On hold <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:492
+#: subscription/class-wcppprog-sub-order-handler.php:525
+msgctxt "Subscription status"
+msgid "Pending cancellation"
+msgstr ""
+
+#. translators: %s: Number of subscriptions with this status.
+#: subscription/class-wcppprog-sub-order-handler.php:497
+#, php-format
+msgid "Pending cancellation <span class=\"count\">(%s)</span>"
+msgid_plural "Pending cancellation <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:501
+#: subscription/class-wcppprog-sub-order-handler.php:526
+msgctxt "Subscription status"
+msgid "Cancelled"
+msgstr ""
+
+#. translators: %s: Number of subscriptions with this status.
+#: subscription/class-wcppprog-sub-order-handler.php:506
+#, php-format
+msgid "Cancelled <span class=\"count\">(%s)</span>"
+msgid_plural "Cancelled <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:510
+#: subscription/class-wcppprog-sub-order-handler.php:527
+msgctxt "Subscription status"
+msgid "Expired"
+msgstr ""
+
+#. translators: %s: Number of subscriptions with this status.
+#: subscription/class-wcppprog-sub-order-handler.php:515
+#, php-format
+msgid "Expired <span class=\"count\">(%s)</span>"
+msgid_plural "Expired <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: Subscription order number.
+#: subscription/class-wcppprog-sub-order-handler.php:563
+#, php-format
+msgid "Subscription #%s"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:591
+msgid "Invalid subscription page."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:608
+msgid "Please log in to view your subscriptions."
+msgstr ""
+
+#. translators: %s: Subscription order number.
+#: subscription/class-wcppprog-sub-order-handler.php:647
+#, php-format
+msgid "View Subscription #%s"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-order-handler.php:666
+msgid "This subscription is unavailable or does not belong to your account."
+msgstr ""
+
+#. translators: %1$d: trial length, %2$s: period label (e.g. "days")
+#: subscription/class-wcppprog-sub-product.php:171
+#, php-format
+msgid "Free for %1$d %2$s, then "
+msgstr ""
+
+#. translators: %1$s: trial price, %2$d: trial length, %3$s: period label
+#: subscription/class-wcppprog-sub-product.php:179
+#, php-format
+msgid "%1$s for %2$d %3$s, then "
+msgstr ""
+
+#. translators: %1$d: interval, %2$s: period label
+#: subscription/class-wcppprog-sub-product.php:205
+#, php-format
+msgid " every %1$d %2$s"
+msgstr ""
+
+#. translators: %s: period label
+#: subscription/class-wcppprog-sub-product.php:212
+#, php-format
+msgid " / %s"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-product.php:240
+msgid "Read more"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-product.php:252
+msgid "Subscribe"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-product.php:269
+#: subscription/class-wcppprog-sub-related.php:309
+msgid "day"
+msgid_plural "days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: subscription/class-wcppprog-sub-product.php:270
+#: subscription/class-wcppprog-sub-related.php:310
+msgid "week"
+msgid_plural "weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: subscription/class-wcppprog-sub-product.php:271
+#: subscription/class-wcppprog-sub-related.php:311
+msgid "month"
+msgid_plural "months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: subscription/class-wcppprog-sub-product.php:272
+#: subscription/class-wcppprog-sub-related.php:312
+msgid "year"
+msgid_plural "years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: subscription/class-wcppprog-sub-related.php:20
+msgid "PayPal subscriptions documentation"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:177
+#: templates/emails/wcpprog-subscription-information.php:31
+msgid "Subscription plan"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:208
+msgid "Subscription billing plan."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:288
+msgid "Unavailable"
+msgstr ""
+
+#. translators: %d: number of days in a billing or trial period.
+#: subscription/class-wcppprog-sub-related.php:293
+#, php-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of weeks in a billing or trial period.
+#: subscription/class-wcppprog-sub-related.php:295
+#, php-format
+msgid "%d week"
+msgid_plural "%d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of months in a billing or trial period.
+#: subscription/class-wcppprog-sub-related.php:297
+#, php-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of years in a billing or trial period.
+#: subscription/class-wcppprog-sub-related.php:299
+#, php-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: recurring total, 2: billing duration, e.g. 2 months.
+#: subscription/class-wcppprog-sub-related.php:317
+#, php-format
+msgid "%1$s every %2$s"
+msgstr ""
+
+#. translators: %s: recurring payment amount.
+#: subscription/class-wcppprog-sub-related.php:319
+#, php-format
+msgid "Recurring payment: %s"
+msgstr ""
+
+#. translators: 1: trial duration, 2: recurring payment description.
+#: subscription/class-wcppprog-sub-related.php:324
+#, php-format
+msgid "Free for %1$s, then %2$s"
+msgstr ""
+
+#. translators: 1: trial total, 2: trial duration, 3: recurring payment description.
+#: subscription/class-wcppprog-sub-related.php:327
+#, php-format
+msgid "%1$s for %2$s, then %3$s"
+msgstr ""
+
+#. translators: %d: number of regular billing cycles, excluding any trial.
+#: subscription/class-wcppprog-sub-related.php:331
+#: subscription/class-wcppprog-sub-related.php:347
+#, php-format
+msgid ", stops after %d recurring payment."
+msgid_plural ", stops after %d recurring payments."
+msgstr[0] ""
+msgstr[1] ""
+
+#: subscription/class-wcppprog-sub-related.php:332
+msgid ", continues until cancelled."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:333
+msgid "Amounts include applicable tax, shipping, discounts and fees calculated at checkout."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:351
+msgid "Excluding applicable tax, shipping, coupon discounts and other fees!"
+msgstr ""
+
+#. translators: %s: recurring price/period text
+#: subscription/class-wcppprog-sub-related.php:385
+#, php-format
+msgid "then %s afterward"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:441
+msgid "Subscription Product"
+msgstr ""
+
+#. translators: %s: Link to the PayPal subscriptions documentation.
+#: subscription/class-wcppprog-sub-related.php:470
+#, php-format
+msgid "Customers subscribe and pay with PayPal Checkout. See the %s for how each setting works."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:475
+msgid "Recurring Price"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:476
+msgid "The regular price charged each billing period after any trial period ends."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:483
+msgid "Recurring Sale Price"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:484
+msgid "Optional discounted price charged for each billing period after the trial period ends. Enter an amount lower than the regular recurring price; otherwise, the discount will not take effect. Leave blank to use the regular price."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:491
+msgid "Recurring Billing Interval"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:492
+msgid "How often the customer is charged, for example every 1 month. The maximum is 365 days, 52 weeks, 12 months or 1 year (a PayPal limit). Larger values are reduced to the maximum when you save the product."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:507
+msgid "Recurring Billing Count"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:508
+msgid "After how many cycles should billing stop. Leave this field empty (or enter 0) if you want the payment to continue until the subscription is canceled."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:518
+msgid "Reattempt on Failure"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:519
+msgid "PayPal automatically retries a failed payment up to two times, 5 days apart. When checked, PayPal suspends the subscription only after 3 billing cycles in a row fail. When unchecked, it suspends after the first failed billing cycle. A suspended subscription shows as On hold, and any missed amount is added to the next payment."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:527
+msgid "Trial Period"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:528
+msgid "Optional free or paid trial before regular billing starts, for example 14 days. The maximum is 365 days, 52 weeks, 12 months or 1 year (a PayPal limit), and larger values are reduced when you save. Leave empty or enter 0 for no trial."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:540
+msgid "Trial Price"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:542
+msgid "Amount to be charged for the trial period. Leave empty or enter 0 if you want to offer a free trial period"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:620
+msgid "You can only purchase one subscription at a time."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:638
+msgid "You can only check out with one subscription item, with a quantity of one. Please update your cart."
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:670
+msgid "Your subscription was removed from the cart since it can't be purchased together with other products."
+msgstr ""
+
+#. translators: %d: Subscription order ID.
+#: subscription/class-wcppprog-sub-related.php:712
+#, php-format
+msgid "View Subscription #%d"
+msgstr ""
+
+#: subscription/class-wcppprog-sub-related.php:716
+msgid "No subscription linked."
+msgstr ""
+
+#: templates/emails/wcpprog-subscription-information.php:28
+msgid "Product"
+msgstr ""
+
+#. translators: %d: Billing interval in days.
+#: templates/emails/wcpprog-subscription-information.php:41
+#, php-format
+msgid "Every %d day"
+msgid_plural "Every %d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: Billing interval in weeks.
+#: templates/emails/wcpprog-subscription-information.php:43
+#, php-format
+msgid "Every %d week"
+msgid_plural "Every %d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: Billing interval in months.
+#: templates/emails/wcpprog-subscription-information.php:45
+#, php-format
+msgid "Every %d month"
+msgid_plural "Every %d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: Billing interval in years.
+#: templates/emails/wcpprog-subscription-information.php:47
+#, php-format
+msgid "Every %d year"
+msgid_plural "Every %d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/emails/wcpprog-subscription-information.php:51
+msgid "Billing interval"
+msgstr ""
+
+#: templates/emails/wcpprog-subscription-information.php:57
+msgid "Next payment"
+msgstr ""
+
+#. translators: 1: Subscription order number, 2: Creation date, 3: Subscription status.
+#: templates/emails/wcpprog-subscription-information.php:65
+#, php-format
+msgid "Subscription #%1$s was created on %2$s and is currently %3$s."
+msgstr ""
+
+#: templates/emails/wcpprog-subscription-information.php:72
+msgid "Subscription Details"
+msgstr ""
+
+#: templates/emails/wcpprog-subscription-information.php:86
+msgid "Billing address"
+msgstr ""
+
+#: templates/emails/wcpprog-subscription-information.php:102
+msgid "Shipping address"
+msgstr ""
+
+#: templates/myaccount/wcpprog-subscriptions.php:19
+msgid "You have no subscriptions yet."
+msgstr ""
+
+#: templates/myaccount/wcpprog-subscriptions.php:19
+msgid "No subscriptions were found on this page."
+msgstr ""
+
+#: templates/myaccount/wcpprog-subscriptions.php:20
+msgid "Back to subscriptions"
+msgstr ""
+
+#: templates/myaccount/wcpprog-subscriptions.php:27
+msgid "Actions"
+msgstr ""
+
+#: templates/myaccount/wcpprog-subscriptions.php:48
+msgid "View"
+msgstr ""
+
+#: templates/myaccount/wcpprog-subscriptions.php:55
+msgid "Subscription pages"
+msgstr ""
+
+#: templates/myaccount/wcpprog-subscriptions.php:56
+msgid "Previous"
+msgstr ""
+
+#: templates/myaccount/wcpprog-subscriptions.php:57
+msgid "Next"
+msgstr ""
+
+#: traits/trait-wcpprog-ppcp-gateway.php:20
+#: traits/trait-wcpprog-ppcp-gateway.php:45
+#: traits/trait-wcpprog-ppcp-gateway.php:77
+msgid "Nonce verification failed!"
+msgstr ""
+
+#: traits/trait-wcpprog-ppcp-gateway.php:141
+#: woo-paypal-pro-gateway-paypal-checkout.php:124
+msgid "Live account is connected. If you experience any issues, please disconnect and reconnect."
+msgstr ""
+
+#: traits/trait-wcpprog-ppcp-gateway.php:148
+msgid "Live PayPal account is not connected. Click the button below to authorize the app and acquire API credentials from your PayPal account."
+msgstr ""
+
+#: traits/trait-wcpprog-ppcp-gateway.php:155
+msgid "For live account onboarding, disable the sandbox mode from general settings."
+msgstr ""
+
+#: traits/trait-wcpprog-ppcp-gateway.php:170
+#: woo-paypal-pro-gateway-paypal-checkout.php:143
+msgid "Sandbox account is connected. If you experience any issues, please disconnect and reconnect."
+msgstr ""
+
+#: traits/trait-wcpprog-ppcp-gateway.php:177
+#: woo-paypal-pro-gateway-paypal-checkout.php:139
+msgid "Sandbox PayPal account is not connected."
+msgstr ""
+
+#: traits/trait-wcpprog-ppcp-gateway.php:184
+msgid "For sandbox account onboarding, enable the sandbox mode from general settings."
+msgstr ""
+
+#. translators: 1: PayPal environment to connect, 2: Environment to disable in settings.
+#: traits/trait-wcpprog-ppcp-gateway.php:257
+#, php-format
+msgid "For %1$s account onboarding, disable the %2$s mode from general settings."
+msgstr ""
+
+#: traits/trait-wcpprog-ppcp-gateway.php:263
+msgid "Checking..."
+msgstr ""
+
+#: traits/trait-wcpprog-ppcp-gateway.php:265
+msgid "Create Webhook"
+msgstr ""
+
+#: traits/trait-wcpprog-ppcp-gateway.php:281
+#: traits/trait-wcpprog-ppcp-gateway.php:283
+#: woo-paypal-pro-gateway-paypal-checkout.php:217
+msgid "Delete Webhooks"
+msgstr ""
+
+#: traits/trait-wcpprog-subscription-related.php:127
+msgid "Day"
+msgstr ""
+
+#: traits/trait-wcpprog-subscription-related.php:128
+msgid "Week"
+msgstr ""
+
+#: traits/trait-wcpprog-subscription-related.php:129
+msgid "Month"
+msgstr ""
+
+#: traits/trait-wcpprog-subscription-related.php:130
+msgid "Year"
+msgstr ""
+
+#: woo-paypal-pro-gateway-blocks-support.php:60
+#: woo-paypal-pro-gateway-class.php:188
+#: woo-paypal-pro-gateway-class.php:191
+#: block-integration/paypal-pro/index.js:1
 msgid "Card Number"
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:157
-msgid "Card Type"
-msgstr ""
-
-#: woo-paypal-pro-gateway-class.php:167
-msgid "Expiration Date"
-msgstr ""
-
-#: woo-paypal-pro-gateway-class.php:198 woo-paypal-pro-gateway-class.php:201
+#: woo-paypal-pro-gateway-blocks-support.php:61
+#: woo-paypal-pro-gateway-class.php:231
+#: woo-paypal-pro-gateway-class.php:234
+#: block-integration/paypal-pro/index.js:1
 msgid "Card Verification Number (CVV)"
 msgstr ""
 
-#: woo-paypal-pro-gateway-class.php:231
+#: woo-paypal-pro-gateway-class.php:43
+#: woo-paypal-pro-gateway-class.php:103
+msgid "Credit Card Payment"
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:65
+msgid "PayPal Pro"
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:66
+msgid "Allows Credit Card Payments via the PayPal Pro gateway."
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:70
+msgid "PayPal-Pro documentation"
+msgstr ""
+
+#. translators: %s: Link to the PayPal Pro documentation.
+#. translators: %s: Link to the PayPal Checkout documentation.
+#: woo-paypal-pro-gateway-class.php:73
+#: woo-paypal-pro-gateway-paypal-checkout.php:242
+#, php-format
+msgid "Please refer to the %s for setup instructions."
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:88
+#: woo-paypal-pro-gateway-paypal-checkout.php:81
+msgid "Enable/Disable"
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:90
+msgid "Enable PayPal Pro Gateway"
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:94
+msgid "Sandbox Mode"
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:96
+msgid "Enable Sandbox Mode"
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:100
+#: woo-paypal-pro-gateway-paypal-checkout.php:88
+msgid "Title"
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:102
+msgid "The title for this checkout option."
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:106
+msgid "Show CVV Hint"
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:108
+msgid "Enable this option if you want to show a hint for the CVV field on the credit card checkout form"
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:112
+msgid "PayPal Pro API Username"
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:114
+msgid "Your PayPal payments pro API username."
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:118
+msgid "PayPal Pro API Password"
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:120
+msgid "Your PayPal payments pro API password."
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:124
+msgid "PayPal Pro API Signature"
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:126
+msgid "Your PayPal payments pro API signature."
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:130
+msgid "Add Unique Invoice Prefix"
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:132
+msgid "Enable this option to add a unique invoice prefix, which can help avoid the 'Duplicate Invoice ID' error from PayPal. This is useful if you need to allow multiple payments for the same invoice ID."
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:160
+msgid "Credit card number you entered is invalid."
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:163
+msgid "Card type is not valid."
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:166
+msgid "Card expiration date is not valid."
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:169
+msgid "Card verification number (CVV) is not valid. You can find this number on your credit card."
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:195
+#: block-integration/paypal-pro/index.js:1
+msgid "Card Type"
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:205
+#: block-integration/paypal-pro/index.js:1
+msgid "Expiration Date"
+msgstr ""
+
+#: woo-paypal-pro-gateway-class.php:277
 msgid "(Transaction Error) something is wrong."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:32
+msgid "Accept payments through secure PayPal Checkout with the latest PayPal payment buttons."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:83
+msgid "Enable PayPal Checkout"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:90
+msgid "This controls the title which the user sees during checkout."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:91
+msgid "PayPal"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:96
+msgid "Description"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:98
+msgid "Payment method description that the customer will see on your checkout."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:99
+msgid "Pay with your PayPal account or credit card."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:104
+msgid "Sandbox"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:106
+msgid "Enable PayPal sandbox"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:108
+msgid "PayPal sandbox can be used to test payments."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:114
+msgid "Live Account Connection Status"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:120
+msgid "Live PayPal account is not connected."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:121
+msgid "Disconnect Live Account"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:128
+msgid "Use this button to connect and obtain the live PayPal API credentials automatically to offer the PayPal Commerce Platform checkout option."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:133
+msgid "Sandbox Account Connection Status"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:147
+msgid "Use this button to connect and obtain the sandbox PayPal API credentials automatically to offer the PayPal Commerce Platform checkout option."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:152
+msgid "Delete Access Token Cache"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:156
+msgid "This will delete the PayPal API access token cache. This is useful if you are having issues with the PayPal API after changing/updating the API credentials."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:162
+msgid "Live Client ID"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:164
+msgid "Get your client ID from PayPal Developer dashboard."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:170
+msgid "Live Client Secret"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:172
+msgid "Get your client secret from PayPal Developer dashboard."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:178
+msgid "Sandbox Client ID"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:180
+msgid "Get your sandbox client ID from PayPal Developer dashboard."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:186
+msgid "Sandbox Client Secret"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:188
+msgid "Get your sandbox client secret from PayPal Developer dashboard."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:195
+msgid "Live Webhook Status"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:197
+msgid "Shows whether the webhook exists in your live PayPal account. PayPal uses it to notify your store about subscription payments, renewals, cancellations and refunds. Use the Create Webhook button if it does not exist."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:206
+msgid "Test Webhook Status"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:208
+msgid "Shows whether the webhook exists in your PayPal sandbox (test) account. PayPal uses it to notify your store about subscription payments, renewals, cancellations and refunds. Use the Create Webhook button if it does not exist."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:219
+msgid "Deletes the webhooks this plugin created in your live and sandbox PayPal accounts. Use this if webhooks are not working, then create them again."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:234
+msgid "Return to payments"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:239
+msgid "PayPal Checkout documentation"
+msgstr ""
+
+#. translators: %s: Link to the PayPal subscriptions documentation.
+#: woo-paypal-pro-gateway-paypal-checkout.php:246
+#, php-format
+msgid "Selling subscriptions? A webhook is required (see the Webhooks tab). Refer to the %s for details."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:252
+msgid "General"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:253
+msgid "API Connection"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:254
+msgid "API Credentials"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:255
+msgid "Webhooks"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:289
+msgid "Clearing..."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:290
+msgid "Error occurred:"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:291
+msgid "Creating webhook..."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:292
+msgid "Deleting..."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:314
+msgid "No fields found for this subtab"
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:449
+msgid "Webhooks for PayPal Checkout are not configured. Go to WooCommerce > Settings > Payments > PayPal Checkout > Webhooks and create the webhook. Customers see a message that subscriptions are temporarily unavailable."
+msgstr ""
+
+#: woo-paypal-pro-gateway-paypal-checkout.php:451
+msgid "Subscriptions are temporarily unavailable. Please try again later or contact the store."
+msgstr ""
+
+#: block-integration/paypal-ppcp/index.js:1
+msgid "Subscription Plan"
+msgstr ""
+
+#: block-integration/paypal-pro/index.js:1
+msgid "CVV Code Hint Image"
+msgstr ""
+
+#: block-integration/paypal-pro/index.js:1
+msgid "Credit / Debit card accept form will render in the front-end."
 msgstr ""

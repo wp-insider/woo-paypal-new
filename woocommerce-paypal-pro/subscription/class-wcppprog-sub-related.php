@@ -289,9 +289,13 @@ class WCPPROG_Subscription_Related {
         }
         $duration = static function ( $count, $unit ) {
             $labels = array(
+                /* translators: %d: number of days in a billing or trial period. */
                 'day' => _n( '%d day', '%d days', $count, 'woocommerce-paypal-pro-payment-gateway' ),
+                /* translators: %d: number of weeks in a billing or trial period. */
                 'week' => _n( '%d week', '%d weeks', $count, 'woocommerce-paypal-pro-payment-gateway' ),
+                /* translators: %d: number of months in a billing or trial period. */
                 'month' => _n( '%d month', '%d months', $count, 'woocommerce-paypal-pro-payment-gateway' ),
+                /* translators: %d: number of years in a billing or trial period. */
                 'year' => _n( '%d year', '%d years', $count, 'woocommerce-paypal-pro-payment-gateway' ),
             );
             return $count > 0 && isset( $labels[$unit] ) ? sprintf( $labels[$unit], $count ) : '';
@@ -311,6 +315,7 @@ class WCPPROG_Subscription_Related {
         }
         /* translators: 1: recurring total, 2: billing duration, e.g. 2 months. */
         $html = $interval ? sprintf( __( '%1$s every %2$s', 'woocommerce-paypal-pro-payment-gateway' ), $money( $terms['recurring_total'] ), esc_html( $interval ) )
+            /* translators: %s: recurring payment amount. */
             : sprintf( __( 'Recurring payment: %s', 'woocommerce-paypal-pro-payment-gateway' ), $money( $terms['recurring_total'] ) );
         $trial = $duration( (int) ( $terms['sub_trial_period'] ?? 0 ), $terms['sub_trial_period_type'] ?? '' );
         if ( $trial && isset( $terms['initial_total'] ) ) {
