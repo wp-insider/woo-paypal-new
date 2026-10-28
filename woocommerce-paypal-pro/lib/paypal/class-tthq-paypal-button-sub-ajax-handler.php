@@ -251,6 +251,7 @@ class PayPal_Button_Sub_Ajax_Handler {
 
 
 
+	// phpcs:disable WordPress.Security.EscapeOutput.ExceptionNotEscaped -- Messages are sent as JSON and shown as plain text by the checkout scripts; escaping here would display entities like &quot;.
 	/**
 	 * Override prices for this buyer using WooCommerce's tax/discount calculations.
 	 * Amounts include shipping, taxes and fees; do not add PayPal taxes on top.
@@ -284,20 +285,20 @@ class PayPal_Button_Sub_Ajax_Handler {
 			// calculate_shipping() returns selected rates on older WooCommerce too.
 			// Do not test shipping_total: a valid selected rate can be free.
 			if ( empty( $address['address_line_1'] ) || empty( $address['country_code'] ) ) {
-				throw new \InvalidArgumentException( esc_html__( 'Please enter a complete shipping address before subscribing.', 'woocommerce-paypal-pro-payment-gateway' ) );
+				throw new \InvalidArgumentException( __( 'Please enter a complete shipping address before subscribing.', 'woocommerce-paypal-pro-payment-gateway' ) );
 			}
 			$rates = $cart->calculate_shipping();
 			$packages = WC()->shipping()->get_packages();
 			$chosen = (array) WC()->session->get( 'chosen_shipping_methods', array() );
 			if ( ! $rates || ! $packages ) {
-				throw new \InvalidArgumentException( esc_html__( 'No shipping options are available for this address. Please verify the address is correct or try a different address.', 'woocommerce-paypal-pro-payment-gateway' ) );
+				throw new \InvalidArgumentException( __( 'No shipping options are available for this address. Please verify the address is correct or try a different address.', 'woocommerce-paypal-pro-payment-gateway' ) );
 			}
 			foreach ( $packages as $key => $package ) {
 				if ( empty( $package['rates'] ) ) {
-					throw new \InvalidArgumentException( esc_html__( 'No shipping options are available for this address. Please verify the address is correct or try a different address.', 'woocommerce-paypal-pro-payment-gateway' ) );
+					throw new \InvalidArgumentException( __( 'No shipping options are available for this address. Please verify the address is correct or try a different address.', 'woocommerce-paypal-pro-payment-gateway' ) );
 				}
 				if ( empty( $chosen[ $key ] ) || ! isset( $package['rates'][ $chosen[ $key ] ] ) ) {
-					throw new \InvalidArgumentException( esc_html__( 'Please select an available shipping method before subscribing.', 'woocommerce-paypal-pro-payment-gateway' ) );
+					throw new \InvalidArgumentException( __( 'Please select an available shipping method before subscribing.', 'woocommerce-paypal-pro-payment-gateway' ) );
 				}
 			}
 			$full_name = isset( $_POST['shipping_full_name'] ) && is_string( $_POST['shipping_full_name'] )
@@ -330,14 +331,14 @@ class PayPal_Button_Sub_Ajax_Handler {
 		$item = reset( $items );
 		if ( count( $items ) !== 1 || ! $item || (float) $item['quantity'] !== 1.0
 			|| ! $item['data'] instanceof \WCPPROG_Subscription_Product ) {
-			throw new \InvalidArgumentException( esc_html__( 'Please check out with one subscription and a quantity of one, without other products.', 'woocommerce-paypal-pro-payment-gateway' ) );
+			throw new \InvalidArgumentException( __( 'Please check out with one subscription and a quantity of one, without other products.', 'woocommerce-paypal-pro-payment-gateway' ) );
 		}
 		if ( ! $item['data']->is_purchasable() || ! $this->wc_paypal_ppcp->is_available() ) {
-			throw new \InvalidArgumentException( esc_html__( 'This subscription is not available for checkout.', 'woocommerce-paypal-pro-payment-gateway' ) );
+			throw new \InvalidArgumentException( __( 'This subscription is not available for checkout.', 'woocommerce-paypal-pro-payment-gateway' ) );
 		}
 		$webhook_notice = $this->wc_paypal_ppcp->webhook_missing_notice();
 		if ( $webhook_notice ) {
-			throw new \InvalidArgumentException( esc_html( $webhook_notice ) );
+			throw new \InvalidArgumentException( $webhook_notice );
 		}
 
 		PayPal_Checkout_Guard::validate_addresses( $this->checkout_customer_data, $cart->needs_shipping() );
@@ -348,9 +349,11 @@ class PayPal_Button_Sub_Ajax_Handler {
 		if ( wc_notice_count( 'error' ) ) {
 			$errors = wc_get_notices( 'error' );
 			wc_clear_notices();
-			throw new \InvalidArgumentException( esc_html( wp_strip_all_tags( implode( ' ', array_column( $errors, 'notice' ) ) ) ) );
+			// WooCommerce notices are HTML (links, entities such as &ldquo;); convert them to plain text.
+			throw new \InvalidArgumentException( html_entity_decode( wp_strip_all_tags( implode( ' ', array_column( $errors, 'notice' ) ) ), ENT_QUOTES, 'UTF-8' ) );
 		}
 	}
+	// phpcs:enable WordPress.Security.EscapeOutput.ExceptionNotEscaped
 
 	/**
 	 * Read only supported address fields, never customer IDs or posted totals.

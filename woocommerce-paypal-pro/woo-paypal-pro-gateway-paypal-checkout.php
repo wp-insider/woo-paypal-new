@@ -444,7 +444,11 @@ class WC_Gateway_PayPal_Checkout extends WC_Payment_Gateway {
         $mode = $this->sandbox ? 'sandbox' : 'production';
         $wh_id = PayPal_Utils::get_option( 'paypal_webhook_id_' . $mode );
         if (empty($wh_id)) {
-            return __('Webhooks for PayPal Checkout are not configured. Please go to the Webhooks tab in payment settings and create the webhook.', 'woocommerce-paypal-pro-payment-gateway');
+            // Shown at checkout: only store managers get the setup instructions.
+            if ( current_user_can( 'manage_woocommerce' ) ) {
+                return __('Webhooks for PayPal Checkout are not configured. Go to WooCommerce > Settings > Payments > PayPal Checkout > Webhooks and create the webhook. Customers see a message that subscriptions are temporarily unavailable.', 'woocommerce-paypal-pro-payment-gateway');
+            }
+            return __('Subscriptions are temporarily unavailable. Please try again later or contact the store.', 'woocommerce-paypal-pro-payment-gateway');
         }
 
         return '';
