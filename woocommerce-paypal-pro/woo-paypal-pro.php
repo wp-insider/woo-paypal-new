@@ -10,7 +10,7 @@
  * Requires at least: 6.5
  * License: GPL2 or Later
  * WC requires at least: 8.0
- * WC tested up to: 10.5.3
+ * WC tested up to: 11.2.1
  */
 
 if (! defined('ABSPATH')) {
