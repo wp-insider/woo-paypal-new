@@ -13,6 +13,13 @@ class WCPPROG_Subscription_Related {
     const SUBSCRIPTION_PRODUCT_TYPE = 'wcpprog_subscription';
     const PAYMENT_REQUIREMENT = 'wcppprog_subscription_checkout';
 
+    const DOCS_URL = 'https://wp-ecommerce.net/configure-and-manage-woocommerce-subscriptions-with-paypal-checkout';
+
+    /** Link to the subscription documentation, for admin screens. */
+    public static function get_docs_link_html() {
+        return '<a href="' . esc_url( self::DOCS_URL ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'PayPal subscriptions documentation', 'woocommerce-paypal-pro-payment-gateway' ) . '</a>';
+    }
+
     const BILLING_INTERVAL_LIMITS = array(
         'day' => 365,
         'week' => 52,
@@ -452,6 +459,11 @@ class WCPPROG_Subscription_Related {
 
     public function subscription_settings_fields() {
         echo '<div class="options_group show_if_' . esc_attr( self::SUBSCRIPTION_PRODUCT_TYPE ) . '">';
+
+        echo '<p style="margin: 1em 12px;">';
+        /* translators: %s: Link to the PayPal subscriptions documentation. */
+        echo wp_kses_post( sprintf( __( 'Customers subscribe and pay with PayPal Checkout. See the %s for how each setting works.', 'woocommerce-paypal-pro-payment-gateway' ), self::get_docs_link_html() ) );
+        echo '</p>';
 
         woocommerce_wp_text_input( array(
                 'id'        => '_wcppprog_sub_recurring_price',

@@ -36,6 +36,7 @@ class WCPPROG_Subscription_Order_Handler {
 		add_action( 'add_meta_boxes', array( $this, 'remove_order_attribution_meta_box' ), 100, 2 );
 		add_action( 'wp_ajax_wcpprog_cancel_subscription', array( $this, 'cancel_subscription' ) );
 		add_filter( 'admin_body_class', array( $this, 'subscription_list_body_class' ) );
+		add_action( 'admin_notices', array( $this, 'render_subscription_list_docs_notice' ) );
 		add_filter( 'manage_' . self::ORDER_TYPE . '_posts_columns', array( $this, 'add_subscription_id_column' ) );
 		add_action( 'manage_' . self::ORDER_TYPE . '_posts_custom_column', array( $this, 'render_subscription_id_column' ), 10, 2 );
 		add_filter( 'manage_woocommerce_page_wc-orders--' . self::ORDER_TYPE . '_columns', array( $this, 'add_subscription_id_column' ) );
@@ -149,6 +150,19 @@ class WCPPROG_Subscription_Order_Handler {
 			$classes .= ' woocommerce_page_wc-orders';
 		}
 		return $classes;
+	}
+
+	/** Point admins to the documentation from the subscriptions list (legacy and HPOS screens). */
+	public function render_subscription_list_docs_notice() {
+		$screen = get_current_screen();
+		if ( ! $screen || ! in_array( $screen->id, array( 'edit-' . self::ORDER_TYPE, 'woocommerce_page_wc-orders--' . self::ORDER_TYPE ), true )
+			|| ( isset( $_GET['action'] ) && 'edit' === $_GET['action'] ) ) {
+			return;
+		}
+		echo '<div class="notice notice-info inline"><p>';
+		/* translators: %s: Link to the PayPal subscriptions documentation. */
+		echo wp_kses_post( sprintf( __( 'These subscriptions are billed through PayPal Checkout. To refund a payment, issue the refund in your PayPal account. See the %s for managing, cancelling and refunding subscriptions.', 'woocommerce-paypal-pro-payment-gateway' ), WCPPROG_Subscription_Related::get_docs_link_html() ) );
+		echo '</p></div>';
 	}
 
 	public function render_subscription_id_column( $column, $order ) {

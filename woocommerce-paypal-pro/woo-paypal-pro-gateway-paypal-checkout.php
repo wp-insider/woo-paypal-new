@@ -241,6 +241,10 @@ class WC_Gateway_PayPal_Checkout extends WC_Payment_Gateway {
         /* translators: %s: Link to the PayPal Checkout documentation. */
         echo wp_kses_post( sprintf(__( 'Please refer to the %s for setup instructions.', 'woocommerce-paypal-pro-payment-gateway'), $doc_link_html) );
         echo '</p>';
+        echo '<p>';
+        /* translators: %s: Link to the PayPal subscriptions documentation. */
+        echo wp_kses_post( sprintf( __( 'Selling subscriptions? A webhook is required (see the Webhooks tab). Refer to the %s for details.', 'woocommerce-paypal-pro-payment-gateway' ), \WCPPROG_Subscription_Related::get_docs_link_html() ) );
+        echo '</p>';
 
         $current_tab = isset($_GET['subtab']) && !empty($_GET['subtab']) ? sanitize_text_field($_GET['subtab']) : 'general';
 
