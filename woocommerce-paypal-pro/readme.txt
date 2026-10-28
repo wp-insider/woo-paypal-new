@@ -8,11 +8,11 @@ Stable tag: 4.1.0
 License: GPL2 or Later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Easily add PayPal Pro and PayPal Checkout payment gateways to WooCommerce. Accept credit cards on-site or offer the latest PayPal payment buttons.
+Add PayPal Pro and PayPal Checkout to WooCommerce. Accept credit cards on-site, offer PayPal buttons, and sell recurring PayPal subscriptions.
 
 == Description ==
 
-This plugin adds two PayPal payment gateway options to your WooCommerce store:
+This plugin adds two PayPal payment gateway options to your WooCommerce store, and lets you sell subscriptions with recurring PayPal payments:
 
 **PayPal Pro (On-Site Credit Card Checkout)**
 
@@ -24,7 +24,27 @@ https://www.youtube.com/watch?v=PAZRba8Tp74
 
 **PayPal Checkout (Latest PayPal Payment Buttons)**
 
-Offer the latest PayPal payment buttons on your checkout and cart pages. Your customers can pay using their PayPal account, credit/debit card, Venmo, Pay Later, and other payment methods supported by PayPal. The plugin uses PayPal's Commerce Platform (PPCP) to provide a modern and secure checkout experience.
+Offer the latest PayPal payment buttons on your checkout page. Your customers can pay using their PayPal account, credit/debit card, Venmo, Pay Later, and other payment methods supported by PayPal. The plugin uses PayPal's Commerce Platform (PPCP) to provide a modern and secure checkout experience.
+
+The following video shows the PayPal Checkout experience for a standard product:
+
+https://www.youtube.com/watch?v=OZCVRwZObdA
+
+**PayPal Subscriptions (Recurring Payments with PayPal Checkout)**
+
+Sell subscription products with automatic recurring billing through PayPal. Create a "Subscription Product" in WooCommerce, set the recurring price and billing interval (for example, every month), and optionally add a free or paid trial period and a fixed number of payments. Customers approve the subscription once in PayPal, and PayPal charges them automatically on schedule.
+
+* Each renewal payment creates an order in WooCommerce automatically.
+* Customers can view their subscriptions and payment history, and cancel, from My Account > Subscriptions.
+* Manage subscriptions in the WordPress admin: view received payments and refunds, cancel in PayPal, and email subscription details to the customer.
+* Renewals, refunds, cancellations and other status changes made in PayPal are synchronized automatically using PayPal webhooks.
+* No additional subscription plugin is required.
+
+The following video shows the subscription checkout experience:
+
+https://www.youtube.com/watch?v=IE3lCJYOh_c
+
+See the [PayPal subscriptions documentation](https://wp-ecommerce.net/configure-and-manage-woocommerce-subscriptions-with-paypal-checkout) for setup and management instructions.
 
 You can enable one or both payment gateways depending on your needs.
 
@@ -33,8 +53,9 @@ You can enable one or both payment gateways depending on your needs.
 * Two payment gateways in one plugin: PayPal Pro and PayPal Checkout.
 * On-site credit card checkout via PayPal Pro.
 * Latest PayPal payment buttons via PayPal Checkout (PayPal, Credit/Debit Card, Venmo, Pay Later).
+* Recurring PayPal subscriptions with optional free or paid trials, using PayPal Checkout.
+* Customer self-service subscription management from the My Account page.
 * Easy one-click account connection for PayPal Checkout using the automated onboarding flow.
-* PayPal buttons on both the checkout page and the cart page.
 * Compatible with the WooCommerce block-based checkout page.
 * Compatible with the legacy shortcode-based checkout page.
 * Compatible with WooCommerce High-Performance Order Storage (HPOS).
@@ -50,6 +71,7 @@ You will see both "PayPal Pro" and "PayPal Checkout" listed as available payment
 
 * For PayPal Pro setup instructions, see the [PayPal Pro documentation](https://wp-ecommerce.net/paypal-pro-payment-gateway-for-woocommerce) page.
 * For PayPal Checkout setup instructions, see the [PayPal Checkout documentation](https://wp-ecommerce.net/woocommerce-paypal-checkout-paypal-pro) page.
+* For selling subscriptions, see the [PayPal subscriptions documentation](https://wp-ecommerce.net/configure-and-manage-woocommerce-subscriptions-with-paypal-checkout) page.
 
 Post a question on the forum if you have any issue using the addon.
 
@@ -89,17 +111,39 @@ Yes. This plugin is fully compatible with WooCommerce High-Performance Order Sto
 = How do I configure the PayPal Checkout gateway? =
 Go to WooCommerce > Settings > Payments > PayPal Checkout. Enable the gateway, then use the API Connection tab to connect your PayPal account with one click. See the [PayPal Checkout documentation](https://wp-ecommerce.net/woocommerce-paypal-checkout-paypal-pro) for detailed instructions.
 
+= Can I sell subscriptions with recurring payments? =
+Yes. Create a product with the "Subscription Product" type and set its recurring price, billing interval and optional trial. Customers subscribe using PayPal Checkout, and PayPal charges them automatically on schedule. See the [PayPal subscriptions documentation](https://wp-ecommerce.net/configure-and-manage-woocommerce-subscriptions-with-paypal-checkout).
+
+= Do I need the WooCommerce Subscriptions plugin? =
+No. The subscription feature is built into this plugin. It is separate from the WooCommerce Subscriptions plugin, and PayPal Checkout is not offered for products created with WooCommerce Subscriptions.
+
+= Can I offer a free trial? =
+Yes. You can add a free or paid trial period to a subscription product. Customers still approve the subscription in PayPal at checkout, and regular billing starts when the trial ends.
+
+= Are PayPal webhooks required for subscriptions? =
+Yes. PayPal uses webhooks to tell your store about renewal payments, refunds and cancellations. Create the webhook from the Webhooks tab in the PayPal Checkout settings before selling subscriptions.
+
+= How do I refund a subscription payment? =
+Issue the refund from your PayPal account. The refund is synchronized to WooCommerce automatically and shown on the order and the subscription's payment history. Refunding a payment does not cancel the subscription.
+
+= Can customers cancel their own subscriptions? =
+Yes. Customers can view and cancel their subscriptions from My Account > Subscriptions. Cancelling stops future payments in PayPal.
+
+= Can a customer buy a subscription and other products in the same order? =
+No. A subscription must be purchased on its own, with a quantity of one.
+
 == Screenshots ==
 
 Please visit the following documentation pages to view screenshots:
 
 * [PayPal Pro setup and configuration](https://wp-ecommerce.net/paypal-pro-payment-gateway-for-woocommerce)
 * [PayPal Checkout setup and configuration](https://wp-ecommerce.net/woocommerce-paypal-checkout-paypal-pro)
+* [PayPal subscriptions setup and management](https://wp-ecommerce.net/configure-and-manage-woocommerce-subscriptions-with-paypal-checkout)
 
 == Changelog ==
 
 = 4.1.0 =
-- New: PayPal subscriptions with PayPal Checkout. Create subscription products with a recurring price, billing interval, optional free or paid trial, and an optional number of payments.
+- New: PayPal subscriptions with PayPal Checkout. Create subscription products with a recurring price, billing interval, optional free or paid trial, and an optional number of payments. [PayPal subscriptions documentation](https://wp-ecommerce.net/configure-and-manage-woocommerce-subscriptions-with-paypal-checkout)
 - New: Customers can view their subscriptions, received payments and cancel a subscription from My Account > Subscriptions.
 - New: Subscription management in the WordPress admin, including received payment history (with refunds), cancellation in PayPal, and sending subscription details to the customer by email.
 - New: Renewal payments, refunds and subscription status changes are synchronized automatically using PayPal webhooks.
@@ -246,6 +290,11 @@ Please visit the following documentation pages to view screenshots:
 - First commit to WordPress repository.
 
 == Upgrade Notice ==
+
+= 4.1.0 =
+Adds recurring PayPal subscriptions with PayPal Checkout. To sell subscriptions, make sure the PayPal Checkout webhook exists (Webhooks tab in the PayPal Checkout settings). The PayPal button is no longer shown on the cart page.
+
+= 1.8 =
 Make sure to go to the settings interface of this addon after the upgrade and save your API details (if the API details are missing).
 
 == Arbitrary section ==
