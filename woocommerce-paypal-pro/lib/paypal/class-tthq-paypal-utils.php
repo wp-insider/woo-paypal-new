@@ -154,25 +154,70 @@ class PayPal_Utils{
         return self::create_billing_plan_for_product( $product_id, true );
     }
 
+    /** Log the admin-facing reason and return the customer-facing plan error. */
+    private static function billing_plan_error( $customer_message, $log_message ) {
+        self::log( 'Subscription plan: ' . $log_message, false );
+        return array( 'success' => false, 'error_message' => $customer_message );
+    }
+
+    /** Explain a failed PayPal plan request in the log, and give the customer a reference to report. */
+    private static function billing_plan_api_error( $api, $product_id, $action ) {
+        $last_error = (array) $api->get_last_error_from_api_call();
+        $debug_id = $last_error['debug_id'] ?? '';
+        $log_message = sprintf( 'PayPal rejected the request to %s for product #%d. Error: %s', $action, $product_id, $last_error['error_message'] ?? 'unknown' );
+        if ( ! empty( $last_error['error_code'] ) ) {
+            $log_message .= ' (' . $last_error['error_code'] . ')';
+        }
+        if ( ! empty( $last_error['details'] ) ) {
+            $log_message .= '. Details: ' . implode( '; ', (array) $last_error['details'] );
+        }
+        $log_message .= $debug_id ? '. PayPal Debug ID: ' . $debug_id : '';
+        $customer_message = $debug_id
+            /* translators: %s: PayPal Debug ID. */
+            ? sprintf( __( 'PayPal could not set up the subscription plan for this product. Please contact the store and mention PayPal Debug ID %s.', 'woocommerce-paypal-pro-payment-gateway' ), $debug_id )
+            : __( 'PayPal could not set up the subscription plan for this product. Please contact the store or try again later.', 'woocommerce-paypal-pro-payment-gateway' );
+        return self::billing_plan_error( $customer_message, $log_message );
+    }
+
+    /** Return the reason a product's subscription settings can't make a PayPal plan, or an empty string. */
+    private static function get_billing_plan_settings_problem( $args ) {
+        $units = array( 'day', 'week', 'month', 'year' );
+        if ( '' === (string) $args['sub_recur_price'] || (float) $args['sub_recur_price'] <= 0 ) {
+            return __( 'the Recurring Price is missing', 'woocommerce-paypal-pro-payment-gateway' );
+        }
+        if ( (int) $args['sub_recur_period'] < 1 ) {
+            return __( 'the Recurring Billing Interval is missing', 'woocommerce-paypal-pro-payment-gateway' );
+        }
+        if ( ! in_array( $args['sub_recur_period_type'], $units, true ) ) {
+            return __( 'the Recurring Billing Interval unit (day, week, month or year) is missing', 'woocommerce-paypal-pro-payment-gateway' );
+        }
+        if ( (int) $args['sub_trial_period'] > 0 && ! in_array( $args['sub_trial_period_type'], $units, true ) ) {
+            return __( 'the Trial Period unit (day, week, month or year) is missing', 'woocommerce-paypal-pro-payment-gateway' );
+        }
+        return '';
+    }
+
     public static function create_billing_plan_for_product( $product_id, $force_new = false ) {
         $error = array( 'success' => false, 'error_message' => __( 'Unable to prepare the subscription plan. Please try again.', 'woocommerce-paypal-pro-payment-gateway' ) );
-        // Atomic acquisition prevents simultaneous checkouts from creating duplicate plans.
+        // Prevents simultaneous checkouts from creating duplicate plans. The lease
+        // expires, so a crashed request cannot block this product permanently.
         $lock = 'wcpprog_plan_lock_' . absint( $product_id );
-        if ( ! add_option( $lock, time(), '', false ) ) {
-            return $error;
+        $token = PayPal_Lock::acquire( $lock );
+        if ( ! $token ) {
+            return array( 'success' => false, 'error_message' => __( 'The subscription plan for this product is being prepared. Please try again in a moment.', 'woocommerce-paypal-pro-payment-gateway' ) );
         }
 
         $lock_held = true;
-        register_shutdown_function( static function () use ( $lock, &$lock_held ) {
+        register_shutdown_function( static function () use ( $lock, $token, &$lock_held ) {
             if ( $lock_held ) {
-                delete_option( $lock );
+                PayPal_Lock::release( $lock, $token );
             }
         } );
 
         try {
             $product = wc_get_product( $product_id );
             if ( ! $product || $product->get_type() !== \WCPPROG_Subscription_Related::SUBSCRIPTION_PRODUCT_TYPE ) {
-                return $error;
+                return self::billing_plan_error( $error['error_message'], sprintf( 'Product #%d is not a subscription product.', $product_id ) );
             }
             $api = new PayPal_Request_API_Injector();
             $request = $api->get_paypal_req_api();
@@ -194,6 +239,15 @@ class PayPal_Utils{
                 $args['sub_trial_period_type'] = '';
                 $args['sub_trial_price'] = '0.00';
             }
+            // PayPal rejects incomplete terms with a generic schema error, so name the field here.
+            $problem = self::get_billing_plan_settings_problem( $args );
+            if ( $problem ) {
+                return self::billing_plan_error(
+                    /* translators: 1: What is wrong with the product settings, 2: Product ID. */
+                    sprintf( __( 'This subscription product is not set up correctly and cannot be purchased right now. Please contact the store and mention that %1$s (product #%2$d).', 'woocommerce-paypal-pro-payment-gateway' ), $problem, $product_id ),
+                    sprintf( 'Product #%d (%s) cannot be sold: %s. Edit the product, complete its subscription settings and click Update.', $product_id, $product->get_name(), $problem )
+                );
+            }
             // Version 2: plans created by version 1 used a daily frequency and a
             // fixed failure threshold. Bumping it makes products get corrected plans.
             $fingerprint = hash( 'sha256', wp_json_encode( array(
@@ -209,7 +263,7 @@ class PayPal_Utils{
                 $details = $api->get_paypal_billing_plan_details( $plan_id );
                 // A failed lookup may be a temporary API error; don't create duplicates.
                 if ( false === $details ) {
-                    return $error;
+                    return self::billing_plan_api_error( $api, $product_id, 'look up the saved subscription plan' );
                 }
                 if ( 'ACTIVE' !== ( $details->status ?? '' ) ) {
                     $plan_id = '';
@@ -221,7 +275,7 @@ class PayPal_Utils{
                     $args
                 );
                 if ( ! is_string( $plan_id ) || '' === $plan_id ) {
-                    return $error;
+                    return self::billing_plan_api_error( $api, $product_id, 'create the subscription plan' );
                 }
             }
             // Persist only after a usable plan is available. Legacy IDs without a
@@ -234,7 +288,7 @@ class PayPal_Utils{
             $product->save_meta_data();
             return array( 'success' => true, 'plan_id' => $plan_id, 'terms' => $args, 'output' => '' );
         } finally {
-            delete_option( $lock );
+            PayPal_Lock::release( $lock, $token );
             $lock_held = false;
         }
     }

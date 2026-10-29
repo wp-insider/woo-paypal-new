@@ -347,13 +347,41 @@ class PayPal_Request_API {
 				} elseif ( isset( $body['name'] ) ) {
 					$this->last_error['error_code'] = $body['name'];
 					$this->last_error['error_message'] = $body['message'] ?? $body['name'];
+					// PayPal lists the rejected fields here; it is what explains a schema error.
+					$issues = array();
+					foreach ( isset( $body['details'] ) && is_array( $body['details'] ) ? $body['details'] : array() as $detail ) {
+						if ( ! is_array( $detail ) ) {
+							continue;
+						}
+						$issue = sanitize_text_field( (string) ( $detail['issue'] ?? '' ) );
+						if ( ! empty( $detail['field'] ) ) {
+							$issue .= ' (' . sanitize_text_field( (string) $detail['field'] ) . ')';
+						}
+						if ( ! empty( $detail['description'] ) ) {
+							$issue .= ': ' . sanitize_text_field( (string) $detail['description'] );
+						}
+						if ( '' !== trim( $issue ) ) {
+							$issues[] = trim( $issue );
+						}
+					}
+					if ( $issues ) {
+						$this->last_error['details'] = $issues;
+					}
 				}
 			} else {
 				//Empty body response.
 				$this->last_error['error_message'] = 'Error! The body of the response is empty. Check that the expected response status code is correct.';
 			}
+			$this->last_error['debug_id'] = sanitize_text_field( (string) wp_remote_retrieve_header( $res, 'paypal-debug-id' ) );
 			//Log this error so the debug option can reveal the details.
-			$this->log_api_error_response( $res, $this->last_error['error_message'], $additional_args );
+			$log_message = $this->last_error['error_message'];
+			if ( ! empty( $this->last_error['error_code'] ) ) {
+				$log_message .= ' Error name: ' . $this->last_error['error_code'] . '.';
+			}
+			if ( ! empty( $this->last_error['details'] ) ) {
+				$log_message .= ' Details: ' . implode( '; ', $this->last_error['details'] );
+			}
+			$this->log_api_error_response( $res, $log_message, $additional_args );
 			return false;
 		}
 

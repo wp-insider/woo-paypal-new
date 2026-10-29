@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-29T10:36:25+00:00\n"
+"POT-Creation-Date: 2026-10-29T10:49:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: woocommerce-paypal-pro-payment-gateway\n"
@@ -283,8 +283,44 @@ msgstr ""
 msgid "PayPal subscription completed. PayPal Subscription ID: %s"
 msgstr ""
 
-#: lib/paypal/class-tthq-paypal-utils.php:158
+#. translators: %s: PayPal Debug ID.
+#: lib/paypal/class-tthq-paypal-utils.php:177
+#, php-format
+msgid "PayPal could not set up the subscription plan for this product. Please contact the store and mention PayPal Debug ID %s."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-utils.php:178
+msgid "PayPal could not set up the subscription plan for this product. Please contact the store or try again later."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-utils.php:186
+msgid "the Recurring Price is missing"
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-utils.php:189
+msgid "the Recurring Billing Interval is missing"
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-utils.php:192
+msgid "the Recurring Billing Interval unit (day, week, month or year) is missing"
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-utils.php:195
+msgid "the Trial Period unit (day, week, month or year) is missing"
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-utils.php:201
 msgid "Unable to prepare the subscription plan. Please try again."
+msgstr ""
+
+#: lib/paypal/class-tthq-paypal-utils.php:207
+msgid "The subscription plan for this product is being prepared. Please try again in a moment."
+msgstr ""
+
+#. translators: 1: What is wrong with the product settings, 2: Product ID.
+#: lib/paypal/class-tthq-paypal-utils.php:247
+#, php-format
+msgid "This subscription product is not set up correctly and cannot be purchased right now. Please contact the store and mention that %1$s (product #%2$d)."
 msgstr ""
 
 #. translators: %s: current PayPal subscription status.
