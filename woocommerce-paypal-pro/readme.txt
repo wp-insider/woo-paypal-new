@@ -145,7 +145,7 @@ Please visit the following documentation pages to view screenshots:
 
 = 4.1.1 =
 - Improved: A "Processing payment" spinner is shown over the PayPal button while the payment is being completed after PayPal approval, and the button can't be clicked again during that time. Applies to both the classic and block checkout pages.
-- PayPal Checkout one-time payments are now only marked as paid after PayPal confirms a completed capture for the correct order and amount. Pending or mismatched payments put the order on hold for review instead.
+- PayPal Checkout one-time payments are now only marked as paid after PayPal confirms a completed capture for the correct order and amount. Pending or mismatched payments put the order on hold for review instead. Thanks to Wade Sparks for reporting this.
 
 = 4.1.0 =
 - New: PayPal subscriptions with PayPal Checkout. Create subscription products with a recurring price, billing interval, optional free or paid trial, and an optional number of payments. [PayPal subscriptions documentation](https://wp-ecommerce.net/configure-and-manage-woocommerce-subscriptions-with-paypal-checkout)
